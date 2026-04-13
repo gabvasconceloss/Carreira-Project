@@ -24,8 +24,8 @@ export const App = () => {
         return (
           <div className="hero-section">
             <h1 className="hero-title">
-              INCLUSÃO <br />
-              <span className="destaque-neon">DIGITAL</span>
+              RAUL <br />
+              <span className="destaque-neon">ROSA</span>
             </h1>
             <h2 className="hero-subtitle">
               ORIENTAÇÃO PROFISSIONAL NO ENSINO MÉDIO
