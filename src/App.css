@@ -1,0 +1,565 @@
+/* RESET E VARIÁVEIS */
+:root {
+  --bg-color: #ffffff;
+  --dark-color: #0d0d0d;
+  --neon-color: #ccff00;
+  --gray-text: #ffffff;
+  --font-main: "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--dark-color);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.dark-bg {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+.destaque-neon {
+  color: var(--neon-color);
+}
+
+.font-bold {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 2px solid var(--neon-color);
+  z-index: 10;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 4rem;
+}
+
+.nav-menu button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-menu button:hover,
+.nav-menu button.active {
+  color: var(--neon-color);
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex: 1;
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* COMPONENTES COMPARTILHADOS */
+.dark-card {
+  background-color: var(--dark-color);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+/* O BOTÃO NORMAL */
+.btn-primario {
+  background-color: var(--neon-color);
+  color: var(--dark-color);
+  border: 2px solid var(--neon-color);
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  /* Uma transição mais complexa para ficar super suave */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* O NOVO HOVER (Quando passa o mouse) */
+.btn-primario:hover {
+  transform: translateY(-4px) scale(1.05); /* Sobe um pouco e cresce */
+  background-color: #e0ff4d; /* Fica um verde um pouco mais claro */
+  letter-spacing: 2px; /* Afasta as letras dando um ar sofisticado */
+  /* A mágica do Glow (sombra neon brilhante) */
+  box-shadow:
+    0 10px 20px -10px var(--neon-color),
+    0 0 15px var(--neon-color);
+}
+
+/* O NOVO ACTIVE (Quando clica) */
+.btn-primario:active {
+  transform: translateY(0) scale(0.98); /* O botão "afunda" */
+  box-shadow: 0 0 5px var(--neon-color); /* O brilho diminui na hora do clique */
+  letter-spacing: 1px;
+}
+
+/* Diz pra caixa funcionar como o nosso simulador acima */
+.app-geral {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* A mola que estica e carrega a sua imagem */
+.miolo {
+  flex: 1;
+  background: var(--bg-color); /* Fica branco ou na cor base do site */
+}
+
+/* HERO SECTION (HOME) */
+.hero-section {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 1100vh;
+  margin-top: 4rem;
+  margin-left: -8rem;
+   min-height: 70vh; /* 🔥 ESSENCIAL */
+  color: #fff;
+  text-shadow: #0d0d0d 10px 10px 20px;
+}
+
+.hero-title {
+  font-size: 7rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* BACKGROUND CONTROLADO */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../public/assets/f682c90d-7e7e-4060-a142-35b7adace375.png");
+  background-size: cover;
+  background-position: center;
+
+  z-index: 0;
+}
+
+/* OVERLAY ESCURO (pra leitura) */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.8)
+  );
+}
+
+
+.hero-btn {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+/* QUIZ */
+.quiz-contador {
+  color: var(--neon-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.botoes-acao {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-sim,
+.btn-nao {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid var(--neon-color);
+}
+
+.btn-sim {
+  background-color: var(--neon-color);
+  color: var(--dark-color);
+}
+
+.btn-nao {
+  background-color: transparent;
+  color: var(--neon-color);
+}
+
+.quiz-finalizado {
+  text-align: center;
+}
+
+/* CATÁLOGO */
+.input-busca {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--dark-color);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.grid-profissoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.badge-formacao {
+  display: inline-block;
+  background-color: var(--neon-color);
+  color: var(--dark-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* FÓRUM */
+.mural-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.form-duvida {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-duvida textarea {
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  resize: vertical;
+}
+
+.lista-duvidas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pergunta-texto {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.resposta-mentor {
+  background-color: #222;
+  padding: 1rem;
+  border-left: 4px solid var(--neon-color);
+  border-radius: 4px;
+}
+
+.badge-aguardando {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: auto;
+  padding: 3rem;
+  border-top: 1px solid rgb(51, 51, 51);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-team p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.3rem;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .mural-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+/* NOVO EFEITO: CYBER BLUR (Desfoque Neon) */
+.efeito-cyber {
+  /* Deixa a letra invisível, mas cria um brilho forte ao redor dela */
+  color: transparent;
+  text-shadow:
+    0 0 4px var(--neon-color),
+    0 0 12px var(--neon-color);
+  /* Chama a animação de piscar e embaçar */
+  animation: pisca-cyber 0.1s infinite alternate;
+}
+
+/* O roteiro: fica embaçado e transparente, depois nítido e forte */
+@keyframes pisca-cyber {
+  0% {
+    opacity: 0.4;
+    filter: blur(2px);
+    transform: scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1.01);
+  }
+}
+
+/* =========================================
+   ANIMAÇÃO DE ENTRADA SOFT (HOME)
+   ========================================= */
+
+/* 1. Criamos a "receita" da animação */
+@keyframes entradaSoft {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Começa 30 pixels mais para baixo */
+    filter: blur(4px); /* Começa um pouco embaçado (efeito premium) */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Volta para a posição original */
+    filter: blur(0px); /* Fica 100% nítido */
+  }
+}
+
+/* 2. Preparamos todos os elementos de dentro da Home para receber a animação */
+.hero-section > * {
+  opacity: 0; /* Esconde tudo no milissegundo 0 */
+  animation: entradaSoft 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* 3. O Efeito Cascata: Damos um atraso diferente para cada linha! */
+.hero-section h1 {
+  animation-delay: 0.1s; /* O Título é o primeiro a subir */
+}
+
+.hero-section h2 {
+  animation-delay: 0.3s; /* Subtítulo sobe logo depois */
+}
+
+.hero-section p {
+  animation-delay: 0.5s; /* O texto com o nosso Glitch/Cyber sobe depois */
+}
+
+.hero-section button,
+.hero-section .hero-btn {
+  animation-delay: 0.7s; /* O botão é o último a aparecer */
+}
+
+/* =========================================
+   ESTRUTURA DA HOME SCROLLÁVEL
+   ========================================= */
+.home-container {
+  display: flex;
+  flex-direction: column;
+}
+/* =========================================
+   SEÇÃO 2: INFO (Problemática e Objetivo)
+   ========================================= */
+.info-section {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap; /* Se a tela for pequena, um cartão cai pra baixo do outro */
+  animation: entradaSoft 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.8s; /* Aparece logo depois do botão da Hero */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  opacity: 0;
+  padding: 10rem 2rem; /* Muito espaço para o scroll ser sentido */
+  background-color: var(--dark-color);
+  color: white;
+  position: relative;
+  background-color: var(--dark-color);
+}
+
+/* BORDA COM FADE */
+.info-section::before {
+  content: "";
+  position: absolute;
+  top: -100px; /* puxa pra cima pra sobrepor a imagem */
+  left: 0;
+  width: 100%;
+  height: 100px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 13, 13, 0),
+    rgba(13, 13, 13, 1)
+  );
+
+  pointer-events: none;
+}
+
+/* =========================================
+   SEÇÃO 3: QUEM SOMOS (A Equipe)
+   ========================================= */
+.team-section {
+  text-align: center;
+  animation: entradaSoft 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 1s; /* Aparece por último */
+  opacity: 0;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+  color: #ffffff;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  background: rgba(13, 13, 13, 0.7);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  border: 1px solid #333;
+  min-width: 280px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px); /* O cartão pula pra cima quando passa o mouse */
+  border-color: var(--neon-color);
+  box-shadow: 0 15px 35px rgba(204, 255, 0, 0.1); /* Brilho neon leve no hover */
+}
+
+.team-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.team-card p {
+  color: var(--neon-color);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* 3. Estilos para as seções de texto maiores */
+
+.alt-bg {
+  background-color: #1a1a1a; /* Um tom de cinza quase preto para diferenciar */
+}
+
+.alt-bg {
+  position: relative;
+}
+
+/* FADE DE CIMA PRA BAIXO */
+.alt-bg::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 13, 13, 0),
+    rgba(26, 26, 26, 1)
+  );
+
+  pointer-events: none;
+}
+
+.container-leitura {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.titulo-secao-grande {
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  line-height: 1;
+}
+
+.texto-informativo p {
+  font-size: 1.5rem; /* Letras bem maiores e legíveis */
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
