@@ -1,0 +1,17 @@
+/* src/index.css */
+
+/* O asterisco aplica essa regra em TODOS os elementos do site */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Uma fonte limpa e moderna, muito comum hoje em dia */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Um fundo cinza bem clarinho para dar contraste com os cards brancos */
+  background-color: #f4f7f6;
+  color: #333;
+}

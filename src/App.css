@@ -1,0 +1,633 @@
+/* RESET E VARIÁVEIS */
+:root {
+  --bg-color: #ffffff;
+  --dark-color: #0d0d0d;
+  --neon-color: #ccff00;
+  --gray-text: #666666;
+  --font-main: "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--dark-color);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.dark-bg {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+.destaque-neon {
+  color: var(--neon-color);
+}
+
+.font-bold {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 2px solid var(--neon-color);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-menu button:hover,
+.nav-menu button.active {
+  color: var(--neon-color);
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex: 1;
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* COMPONENTES COMPARTILHADOS */
+.dark-card {
+  background-color: var(--dark-color);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+.btn-primario {
+  background-color: var(--neon-color);
+  color: var(--dark-color);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+
+.btn-primario:hover {
+  transform: translateY(-2px);
+  background-color: #b8e600;
+}
+
+/* HERO SECTION (HOME) */
+.hero-section {
+  text-align: left;
+  margin-top: 4rem;
+}
+
+.hero-title {
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--gray-text);
+  margin-bottom: 1rem;
+}
+
+.hero-btn {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+/* QUIZ */
+.quiz-contador {
+  color: var(--neon-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.botoes-acao {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-sim,
+.btn-nao {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid var(--neon-color);
+}
+
+.btn-sim {
+  background-color: var(--neon-color);
+  color: var(--dark-color);
+}
+
+.btn-nao {
+  background-color: transparent;
+  color: var(--neon-color);
+}
+
+.quiz-finalizado {
+  text-align: center;
+}
+
+/* CATÁLOGO */
+.input-busca {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--dark-color);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.grid-profissoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.badge-formacao {
+  display: inline-block;
+  background-color: var(--neon-color);
+  color: var(--dark-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* FÓRUM GERAL */
+.mural-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.form-duvida {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-duvida textarea {
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  resize: vertical;
+}
+
+.lista-duvidas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pergunta-texto {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.resposta-mentor {
+  background-color: #222;
+  padding: 1rem;
+  border-left: 4px solid var(--neon-color);
+  border-radius: 4px;
+}
+
+.badge-aguardando {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: auto;
+  padding: 3rem;
+  border-top: 1px solid #333;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-team p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.3rem;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .mural-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+/* NOVOS ESTILOS PARA O QUIZ E MURAL */
+.progresso-container {
+  width: 100%;
+  height: 8px;
+  background-color: #333;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.progresso-barra {
+  height: 100%;
+  background-color: var(--neon-color);
+  transition: width 0.3s ease;
+}
+
+.badge-equipe {
+  background-color: var(--neon-color);
+  color: var(--dark-color);
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+/* EFEITOS DE TRANSIÇÃO DO QUIZ */
+.quiz-animacao-entra {
+  animation: deslizaEntra 0.3s ease forwards;
+}
+
+.quiz-animacao-sai {
+  animation: deslizaSai 0.3s ease forwards;
+}
+
+@keyframes deslizaEntra {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes deslizaSai {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+/* NOVOS BOTÕES DE OPÇÃO DO QUIZ */
+.botoes-escala {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-opcao {
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.btn-peso-2 {
+  background-color: var(--neon-color);
+  color: var(--dark-color);
+  border: 2px solid var(--neon-color);
+}
+
+.btn-peso-1 {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid var(--neon-color);
+}
+
+.btn-peso-0 {
+  background-color: transparent;
+  color: #888;
+  border: 2px solid #444;
+}
+
+.btn-peso-1:hover {
+  background-color: rgba(204, 255, 0, 0.1);
+}
+.btn-peso-0:hover {
+  border-color: #666;
+  color: #fff;
+}
+
+/* BADGES PARA OS CURSOS NO RESULTADO DO QUIZ */
+.cursos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.curso-badge {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid var(--neon-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.curso-badge.tecnico {
+  border-color: #aaa;
+  color: #ccc;
+}
+
+/* ========================================= */
+/* NOVOS ESTILOS DO FÓRUM (ALTO CONTRASTE)   */
+/* ========================================= */
+
+.lista-lado {
+  display: flex;
+  flex-direction: column;
+}
+
+/* TÍTULOS E TEXTOS NO FUNDO BRANCO */
+.titulo-secao {
+  color: #000;
+  font-weight: 900;
+}
+
+/* ESTILOS DAS ABAS DO FÓRUM (ALTO CONTRASTE) */
+.btn-aba-forum {
+  background: transparent;
+  border: none;
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 8px;
+}
+
+.btn-aba-forum:hover {
+  color: #000;
+  background-color: #f0f0f0;
+}
+
+.btn-aba-forum.ativa {
+  background-color: var(--neon-color);
+  color: #000; /* Texto PRETO para dar contraste */
+  border: 2px solid #000; /* Borda PRETA */
+}
+
+/* FILTROS DE ALTO CONTRASTE */
+.btn-filtro-alto-contraste {
+  background-color: transparent;
+  color: #333;
+  border: 2px solid #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.btn-filtro-alto-contraste:hover {
+  border-color: #000;
+  color: #000;
+}
+
+.btn-filtro-alto-contraste.ativo {
+  background-color: var(--neon-color);
+  color: #000;
+  border-color: #000;
+}
+
+/* BOTÃO DE CURTIR */
+.btn-curtir {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  background: transparent;
+  border: none;
+  color: #aaa;
+}
+
+.btn-curtir:hover {
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* ========================================= */
+/* ESTILOS DO MODAL (JANELA DE CARREIRAS)    */
+/* ========================================= */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+  padding: 1rem;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: deslizaEntra 0.3s ease-out;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #888;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #fff;
+}
+
+.modal-info-box {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin-bottom: 1rem;
+}
+
+.modal-info-box h4 {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modal-info-box p {
+  color: #ddd;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* App.css Updates for Carreiras Section Visualization & Contrast Fixes */
+
+/* 1. Força alto contraste no título principal (Estava cinza em branco) */
+.titulo-secao {
+  color: #000000 !important; /* Texto Preto Absoluto no fundo branco */
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* 2. Reformulação dos Filtros para Alto Contraste */
+.btn-filtro-alto-contraste {
+  background-color: transparent;
+  color: #000000; /* Texto Preto */
+  border: 2px solid #ccc; /* Borda cinza sutil */
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-filtro-alto-contraste:hover {
+  border-color: #000000;
+  background-color: #f0f0f0; /* Fundo cinza claríssimo no hover */
+}
+
+/* Estado Ativo (Selecionado) do filtro - usa cor do eixo definida inline no React */
+.btn-filtro-alto-contraste.ativo {
+  color: #000000 !important; /* Força texto PRETO sobre a cor de fundo */
+  border-color: #000000 !important; /* Borda preta combinando */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+}
+
+/* 3. Melhoria na Percepção de Clique dos Cards (Hover Effects) */
+.grid-profissoes div[className="dark-card"] {
+  /* Seletor para os cards dentro do grid */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  cursor: pointer; /* Garante o cursor de mãozinha */
+}
+
+.grid-profissoes div[className="dark-card"]:hover {
+  transform: translateY(-8px) scale(1.01); /* Levanta e cresce levemente */
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(204, 255, 0, 0.4); /* Efeito Glow Neon no hover */
+}
