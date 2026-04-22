@@ -151,7 +151,7 @@ export const Mural = () => {
           justifyContent: "center",
           gap: "1rem",
           marginBottom: "3rem",
-          borderBottom: "2px solid #000",
+          borderBottom: "2px solid #ffffff",
           paddingBottom: "1rem",
         }}
       >
@@ -256,7 +256,7 @@ export const Mural = () => {
                 border: "2px solid #000",
               }}
             >
-              Enviar para Nuvem
+              Enviar pergunta
             </button>
 
             {mensagemSucesso && (
@@ -271,7 +271,7 @@ export const Mural = () => {
                   fontWeight: "bold",
                 }}
               >
-                ✓ Pergunta salva no Firebase!
+                ✓ Sua pergunta foi enviada!
               </div>
             )}
           </form>
@@ -315,6 +315,29 @@ export const Mural = () => {
                   key={cat}
                   onClick={() => setFiltroAtual(cat)}
                   className={`btn-filtro-alto-contraste ${filtroAtual === cat ? "ativo" : ""}`}
+                  style={{
+                    // Se estiver ativo, usa a cor da função getCorTag, senão fica transparente
+                    backgroundColor:
+                      filtroAtual === cat
+                        ? cat === "Todas"
+                          ? "var(--neon-color)"
+                          : getCorTag(cat)
+                        : "transparent",
+
+                    // Se estiver ativo, a letra fica preta para contrastar com a cor de fundo
+                    color: filtroAtual === cat ? "#000000" : "#ffffff",
+
+                    // A borda também segue a cor da tag quando ativo
+                    borderColor:
+                      filtroAtual === cat
+                        ? cat === "Todas"
+                          ? "var(--neon-color)"
+                          : getCorTag(cat)
+                        : "#444",
+
+                    fontWeight: "bold",
+                    transition: "all 0.3s ease", // Adiciona uma suavidade na troca de cor
+                  }}
                 >
                   {cat}
                 </button>
@@ -327,7 +350,7 @@ export const Mural = () => {
               <p
                 style={{
                   textAlign: "center",
-                  color: "#000",
+                  color: "#ffffff",
                   fontWeight: "bold",
                 }}
               >

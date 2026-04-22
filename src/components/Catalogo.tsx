@@ -354,7 +354,7 @@ export const Catalogo = ({ eixoSugerido = "Todas" }: CatalogoProps) => {
                     ? "var(--neon-color)"
                     : getCorEixo(eixo)
                   : "transparent",
-              color: "#000000", // TEXTO SEMPRE PRETO
+              color: "#ffffff", // TEXTO SEMPRE PRETO
               borderColor: filtroEixo === eixo ? "#000000" : "#888888",
               fontWeight: "bold",
             }}
