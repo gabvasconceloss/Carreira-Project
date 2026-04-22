@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 // Definindo o formato dos dados de uma Carreira
 interface Carreira {
