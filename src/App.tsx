@@ -190,13 +190,13 @@ export const App = () => {
                     nome: "Gabriel Vasconcelos",
                     papel: "Desenvolvedor & Idealizador",
                     bio: "Apaixonado por tecnologia e design de interfaces. Focado em criar experiências imersivas que ajudam jovens a descobrirem seu verdadeiro potencial.",
-                    imagem: "/assets/foto-gabriel.png",
+                    imagem: "./assets/foto-gabriel.png",
                   },
                   {
                     nome: "Raul da Silva",
                     papel: "Desenvolvedor & Tech Lead",
                     bio: "Especialista em lógica e estruturação de dados. Trabalha nos bastidores para garantir que o sistema seja rápido, seguro e eficiente para todos os usuários.",
-                    imagem: "/assets/foto-raul.jpeg",
+                    imagem: "./assets/foto-raul.jpeg",
                   },
                 ].map((membro, index) => (
                   <div key={index} className="glass-card perfil">
@@ -231,7 +231,7 @@ export const App = () => {
       >
         <div className="logo" onClick={() => navegarPara("home")}>
           <img
-            src="/assets/logo.svg"
+            src={new URL('/public/assets/logo.svg', import.meta.url).href} //"./logo.svg"
             alt="Logo Trilha Jovem"
             className="logo-img"
           />
